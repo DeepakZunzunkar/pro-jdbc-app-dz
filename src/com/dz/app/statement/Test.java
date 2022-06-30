@@ -17,9 +17,9 @@ public class Test {
 
 			System.out.println("1.create");
 			System.out.println("2.insert");
-			System.out.println("3.update");
-			System.out.println("4.delete");
-			System.out.println("5.view record \n");
+			System.out.println("3.update [required ID * ]");
+			System.out.println("4.delete [required ID * ]");
+			System.out.println("5.view all record \n");
 			
 			int num =sc.nextInt();
 		
@@ -31,34 +31,27 @@ public class Test {
 					{
 						System.out.println("table created successfully..");
 					}
-					
 					break;
 			case 2:
-//					DaoImp.insert();
-					
-					
-				
+					DaoImpl.insert();
 					break;
 			case 3:
-//					DaoImp.update();
+					DaoImpl.update();
 					break;
 		
 			case 4:
-//					DaoImp.delete();
+					DaoImpl.delete();
 					break;
 					
 			case 5:
-//					DaoImp.getAllRecord();
+					DaoImpl.getAllRecord();
 					break;
-			
 			default:
-				
 					System.out.println("INVALID Choice");
 					break;
 		}
 			
-			
-		System.out.println("Do u want to continue other operation (yest/no): ");
+		System.out.println("Do u want to continue other operation (yes[y] / no[n] ) ? : ");
 		status=sc.next();	
 		
 		
