@@ -11,8 +11,8 @@ public static Connection con=null;
 	public static void main(String[] args) {
 		
 		// add mySql or oracle connection jar in class path
-		loadMySqlDriver();
-//		loadOracleDriver();
+		getMySqlConnection();
+//		getOracleConnection();
 		
 		try {
 			con.close();
@@ -22,17 +22,18 @@ public static Connection con=null;
 		}
 	}
 	
-	private static Connection loadMySqlDriver()
+	public static Connection getMySqlConnection()
 	{
 		try {
 			
 			//register the driver means load the driver class 
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("\nDriver Loaded..");
+			System.out.println("\nstep 1:- Driver Loaded..");
 			
 			//Create the connection object
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jarvis","root","root");
-			System.out.println("connection created.\n");
+			// means provide the connection between java application and database
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/dz","root","root");
+			System.out.println("step 2:- connection created.\n");
 			
 		} catch (Exception e) {
 			
@@ -41,7 +42,7 @@ public static Connection con=null;
 		return con;
 	}
 	
-	private static Connection loadOracleDriver()
+	private static Connection getOracleConnection()
 	{
 		try {
 			
