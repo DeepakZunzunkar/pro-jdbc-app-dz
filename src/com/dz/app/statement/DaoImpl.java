@@ -21,7 +21,7 @@ public class DaoImpl {
 			Statement st=con.createStatement();
 			
 			//step 3:-write the query
-			String q1="create table emp (eid int primary key auto_increment ,ename varchar(50),email varchar(50),age int,salary double)";
+			String q1="create table Employee (eid int primary key auto_increment ,ename varchar(50),email varchar(50),age int,salary double)";
 			
 			//step 4:-execute the query
 			status=st.execute(q1);
@@ -63,7 +63,7 @@ public class DaoImpl {
 				double sal=sc.nextDouble();
 			
 				//step 3:-write the query
-				String q2="insert into emp (ename,email,age,salary) values('"+name+"','"+email+"',"+age+","+sal+")";
+				String q2="insert into Employee (ename,email,age,salary) values('"+name+"','"+email+"',"+age+","+sal+")";
 				
 				//step 4:-execute the query
 				int i=st.executeUpdate(q2);
@@ -120,7 +120,7 @@ public class DaoImpl {
 				double sal=sc.nextDouble();
 				
 				//step 3:-write the query
-				String q3="update emp set ename='"+name+"',email='"+email+"',age="+age+",salary="+sal+" where eid="+id;
+				String q3="update Employee set ename='"+name+"',email='"+email+"',age="+age+",salary="+sal+" where eid="+id;
 				
 				//step 4:-execute the query
 				status=st.executeUpdate(q3);
@@ -158,7 +158,7 @@ public class DaoImpl {
 			
 			if(getRecordByID(id)) {
 				//step 3:-write the query
-				String q4="delete from emp where eid="+id;
+				String q4="delete from Employee where eid="+id;
 				
 				//step 4:-execute the query 
 				int status=st.executeUpdate(q4);
@@ -193,7 +193,7 @@ public class DaoImpl {
 			Statement st=con.createStatement();
 			
 			//step 3:-write the query
-			String q5="select * from emp where eid="+id;
+			String q5="select * from Employee where eid="+id;
 			
 			//step 4:-execute the query
 			ResultSet rs=st.executeQuery(q5);
@@ -242,7 +242,7 @@ public class DaoImpl {
 			Statement st=con.createStatement();
 			
 			//step 3:-write the query
-			String q5="select * from emp";
+			String q5="select * from Employee";
 			
 			//step 4:-execute the query
 			ResultSet rs=st.executeQuery(q5);
